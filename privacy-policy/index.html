@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Sondgeroth Fit</title>
-  <meta name="description" content="Sondgeroth Fit privacy policy. How we collect, use, and share your personal information.">
+  <meta name="description" content="Sondgeroth Fit privacy policy. How we collect, use, and protect your personal information in the Sondgeroth Fit app.">
+  <link rel="canonical" href="https://sondgerothfit.com/privacy-policy">
+  <meta property="og:title" content="Privacy Policy | Sondgeroth Fit">
+  <meta property="og:description" content="Sondgeroth Fit privacy policy. How we collect, use, and protect your personal information.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sondgerothfit.com/privacy-policy">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Privacy Policy | Sondgeroth Fit">
+  <meta name="twitter:description" content="Sondgeroth Fit privacy policy.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
   <style>
     *, *::before, *::after {
@@ -168,6 +176,33 @@
 
     footer a {
       color: rgba(255, 255, 255, 0.5);
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: #e85d26;
+    }
+
+    .footer-links {
+      margin-top: 8px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 20px 24px 0;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .breadcrumb a {
+      color: #e85d26;
+      font-weight: 500;
     }
 
     /* ── Responsive ── */
@@ -221,6 +256,11 @@
   <div class="page-hero">
     <h1>Privacy Policy</h1>
   </div>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> &rsaquo; Privacy Policy
+  </nav>
 
   <!-- Policy Content -->
   <section class="policy-section">
@@ -290,6 +330,11 @@
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Sondgeroth Fit. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </div>
   </footer>
 
 </body>

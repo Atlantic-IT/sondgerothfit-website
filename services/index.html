@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Sondgeroth Fit</title>
-  <meta name="description" content="Fitness coaching services by Sondgeroth Fit. In-person training, custom programming, app access, coaching calls, and more.">
+  <title>Services | Sondgeroth Fit — In-Person Training, Custom Programming & App</title>
+  <meta name="description" content="Explore Sondgeroth Fit coaching services: in-person training, custom programming, app access ($20/mo), coaching calls, accountability support, and programming adjustments by Ben Sondgeroth.">
+  <link rel="canonical" href="https://sondgerothfit.com/services">
+  <meta property="og:title" content="Services | Sondgeroth Fit">
+  <meta property="og:description" content="In-person training, custom programming, app access, coaching calls, and more. Fitness coaching by Ben Sondgeroth.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sondgerothfit.com/services">
+  <meta property="og:image" content="https://sondgerothfit.com/ben-profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Services | Sondgeroth Fit">
+  <meta name="twitter:description" content="In-person training, custom programming, app access, coaching calls, and more. Fitness coaching by Ben Sondgeroth.">
+  <meta name="twitter:image" content="https://sondgerothfit.com/ben-profile.jpg">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
   <style>
     *, *::before, *::after {
@@ -286,6 +296,24 @@
       border-bottom-color: #e85d26;
     }
 
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 24px 0;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .breadcrumb a {
+      color: #e85d26;
+      font-weight: 500;
+    }
+
+    .breadcrumb a:hover {
+      opacity: 0.8;
+    }
+
     /* ── Footer ── */
     footer {
       background: #111;
@@ -293,6 +321,23 @@
       text-align: center;
       padding: 24px;
       font-size: 0.85rem;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: #e85d26;
+    }
+
+    .footer-links {
+      margin-top: 8px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     /* ── Responsive ── */
@@ -350,6 +395,53 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Sondgeroth Fit",
+      "url": "https://sondgerothfit.com"
+    },
+    "name": "Fitness Coaching Services",
+    "description": "Personalized fitness coaching including in-person training, custom programming, coaching calls, accountability support, and app-based workouts.",
+    "url": "https://sondgerothfit.com/services",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Coaching Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "In Person Training", "description": "1 on 1 or group coaching in a 60-minute session for improving skills, refining technique, or getting a solid workout." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "App Access", "description": "Self-guided workouts, 6 per week via the Sondgeroth Fit app with Olympic Lifting programs and daily workout builder." }, "price": "20.00", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Accountability and Habits", "description": "Support for staying accountable and improving daily habits including gym consistency, sleep, and routine building." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Coaching Calls", "description": "Weekly or monthly strategic planning sessions via Zoom, phone, or in-person." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Programming", "description": "Fully customized training plan tailored to goals and equipment, delivered weekly with text support." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Programming Adjustments", "description": "Optimization of existing training plans to align with goals, lifestyle, and recovery." } }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Sondgeroth Fit",
+    "operatingSystem": "iOS",
+    "applicationCategory": "HealthApplication",
+    "url": "https://apps.apple.com/us/app/sondgeroth-fit/id6738867288",
+    "offers": {
+      "@type": "Offer",
+      "price": "20.00",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sondgerothfit.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://sondgerothfit.com/services" }
+    ]
+  }]
+  </script>
 </head>
 <body>
 
@@ -371,6 +463,11 @@
     <h1>Services</h1>
     <p>Coaching options to match your lifestyle and experience level.</p>
   </div>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> &rsaquo; Services
+  </nav>
 
   <!-- Services -->
   <section class="services-section">
@@ -448,6 +545,11 @@
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Sondgeroth Fit. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </div>
   </footer>
 
 </body>
