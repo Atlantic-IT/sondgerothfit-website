@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sondgeroth Fit | Fitness Coaching</title>
+  <meta name="description" content="Personalized fitness coaching by Ben Sondgeroth. CrossFit L2 Trainer, Adaptive Trainer. Virtual coaching, customized programming, and in-person sessions.">
+  <meta property="og:title" content="Sondgeroth Fit | Fitness Coaching">
+  <meta property="og:description" content="The best workout is the one you did. Personalized fitness coaching for every lifestyle.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sondgerothfit.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── Header ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(26, 26, 26, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #e85d26;
+    }
+
+    /* ── Hero ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('ruck.jpg') center / cover no-repeat;
+      text-align: center;
+      color: #fff;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      padding: 0 24px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      opacity: 0.9;
+      margin-bottom: 36px;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: #e85d26;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #c94d1c;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #fff;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* ── Sections ── */
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .section-heading {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .section-subheading {
+      font-size: 1.05rem;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    /* ── About ── */
+    #about {
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-img {
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: top center;
+      width: 100%;
+    }
+
+    .about-tagline {
+      font-size: 1.1rem;
+      color: #e85d26;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    /* ── Testimonials ── */
+    #testimonials {
+      background: #f5f5f5;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      padding: 36px 32px;
+      border-radius: 6px;
+      border-left: 4px solid #e85d26;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card cite {
+      font-style: normal;
+      font-weight: 600;
+      color: #1a1a1a;
+      font-size: 0.95rem;
+    }
+
+    /* ── Programs ── */
+    #programs {
+      background: #fff;
+    }
+
+    .programs-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .programs-text p {
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .program-features {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .program-features li {
+      padding: 10px 0;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #1a1a1a;
+      border-bottom: 1px solid #eee;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .program-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: #e85d26;
+      border-radius: 50%;
+    }
+
+    .programs-img {
+      border-radius: 8px;
+      object-fit: cover;
+      width: 100%;
+      max-height: 480px;
+    }
+
+    /* ── Contact ── */
+    #contact {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    #contact .section-heading {
+      color: #fff;
+    }
+
+    .contact-content p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.8;
+      margin-bottom: 28px;
+      max-width: 640px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-size: 1.1rem;
+      color: #e85d26;
+      font-weight: 600;
+      margin-bottom: 28px;
+      transition: opacity 0.2s;
+    }
+
+    .contact-email:hover {
+      opacity: 0.8;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .social-links a:hover {
+      color: #e85d26;
+      border-bottom-color: #e85d26;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #111;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+    }
+
+    /* ── Responsive ── */
+    @media (min-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .programs-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+      }
+
+      .hero-content h1 {
+        font-size: 3.2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-inner {
+        padding: 100px 24px;
+      }
+
+      .hero-content h1 {
+        font-size: 3.6rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        gap: 16px;
+      }
+
+      nav a {
+        font-size: 0.8rem;
+      }
+
+      .logo {
+        font-size: 1rem;
+      }
+
+      .header-inner {
+        padding: 12px 16px;
+      }
+
+      .section-inner {
+        padding: 60px 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="#hero" class="logo">Sondgeroth Fit</a>
+      <nav>
+        <a href="/services">Services</a>
+        <a href="https://h8dxbkdcekd.typeform.com/to/A2P9zN1U" target="_blank" rel="noopener noreferrer">Get Started</a>
+        <a href="https://apps.apple.com/us/app/sondgeroth-fit/id6738867288" target="_blank" rel="noopener noreferrer">App</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>The best workout is the one you did.</h1>
+      <p>We are all busy, but making time for your health and fitness shouldn't be hard.</p>
+      <a href="/services" class="btn">Start Your Journey</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <img src="ben-profile.jpg" alt="Coach Ben Sondgeroth" class="about-img">
+        <div class="about-text">
+          <div class="about-tagline">Father. Husband. Coach. Athlete.</div>
+          <h2>Ben</h2>
+          <p>I'm a CrossFit Level 2 Trainer and Adaptive Trainer with years of experience training under top Strength and Olympic Lifting coaches. Beyond coaching, I love to compete, taking 1st place at the 2023 and 2024 Asbury Park Summer Games. As well as qualifying for the CrossFit Semifinals in 2025, and the Quarterfinals from 2021-2024. But what defines me most is being a father, husband, and someone who understands the real life demands of balancing fitness with family and work. That's why my coaching goes beyond workouts, I help you integrate training into your life in a sustainable way. I'm here to guide, support, and work alongside you because success isn't just about the gym, it's about building a life you're proud of.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="section-inner">
+      <h2 class="section-heading">What Clients Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <blockquote>"Working with Sondgeroth Fit has me feeling younger than I did when I was 30."</blockquote>
+          <cite>— Ben</cite>
+        </div>
+        <div class="testimonial-card">
+          <blockquote>"Let Ben help improve your health and mind. Incredible guy who works incredibly hard!"</blockquote>
+          <cite>— Richard</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section id="programs">
+    <div class="section-inner">
+      <div class="programs-layout">
+        <div class="programs-text">
+          <h2 class="section-heading">Strong for Life, Not Just the Gym</h2>
+          <p>At Sondgeroth Fit, the goal goes beyond just fitness it's about creating a program that fits into your life. We offer a range of coaching options to match your lifestyle and experience level, including virtual coaching, customized programming, and in-person sessions. Whether you're looking to improve your strength, mobility, or aerobic capacity, there's a program designed to support your goals. Fitness should be sustainable, not something that takes over your life, but something that integrates into it. Our focus is on helping you build long-term habits so you can stay strong, capable, and confident at any age.</p>
+          <ul class="program-features">
+            <li>Virtual Coaching</li>
+            <li>Customized Programming</li>
+            <li>In-Person Sessions</li>
+          </ul>
+          <a href="/services" class="btn">Explore Programs</a>
+        </div>
+        <img src="training-bw.jpg" alt="Strength training at Sondgeroth Fit" class="programs-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-inner">
+      <h2 class="section-heading">Ready to Get Started?</h2>
+      <div class="contact-content">
+        <p>Interested in working together or have questions? Reach out for a free consultation to help us find a program that works for you. Or fill out the onboarding form to get started!</p>
+        <a href="mailto:ben@sondgerothfit.com" class="contact-email">ben@sondgerothfit.com</a>
+        <div class="contact-buttons">
+          <a href="https://h8dxbkdcekd.typeform.com/to/A2P9zN1U" target="_blank" rel="noopener noreferrer" class="btn">Start Onboarding</a>
+          <a href="mailto:ben@sondgerothfit.com" class="btn btn-outline">Email Me</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/sondgeroth.fit/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.facebook.com/people/Sondgeroth-Fit/61568907205618/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.youtube.com/channel/UC-cmcqoUNuGsJsqTo_kbq2A" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.tiktok.com/@sondgeroth.fit" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sondgeroth Fit. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

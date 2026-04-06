@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Sondgeroth Fit</title>
+  <meta name="description" content="Fitness coaching services by Sondgeroth Fit. In-person training, custom programming, app access, coaching calls, and more.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── Header ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(26, 26, 26, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #e85d26;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: #e85d26;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #c94d1c;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #fff;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-outline-dark {
+      background: transparent;
+      border: 2px solid #1a1a1a;
+      color: #1a1a1a;
+    }
+
+    .btn-outline-dark:hover {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 140px 24px 80px;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+
+    .page-hero p {
+      font-size: 1.15rem;
+      opacity: 0.8;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ── Services Grid ── */
+    .services-section {
+      background: #fff;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .service-card {
+      padding: 40px 36px;
+      border-radius: 8px;
+      background: #f9f9f9;
+      border-left: 4px solid #e85d26;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+
+    .service-card p {
+      font-size: 1.02rem;
+      color: #444;
+      line-height: 1.75;
+    }
+
+    .service-card .price {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #e85d26;
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      background: #f5f5f5;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 1.05rem;
+      color: #444;
+      max-width: 580px;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Contact ── */
+    #contact {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .section-heading {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    #contact .section-heading {
+      color: #fff;
+    }
+
+    .contact-content p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.8;
+      margin-bottom: 28px;
+      max-width: 640px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-size: 1.1rem;
+      color: #e85d26;
+      font-weight: 600;
+      margin-bottom: 28px;
+      transition: opacity 0.2s;
+    }
+
+    .contact-email:hover {
+      opacity: 0.8;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .social-links a:hover {
+      color: #e85d26;
+      border-bottom-color: #e85d26;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #111;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+    }
+
+    /* ── Responsive ── */
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .page-hero h1 {
+        font-size: 3.2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-inner {
+        padding: 100px 24px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        gap: 16px;
+      }
+
+      nav a {
+        font-size: 0.8rem;
+      }
+
+      .logo {
+        font-size: 1rem;
+      }
+
+      .header-inner {
+        padding: 12px 16px;
+      }
+
+      .section-inner {
+        padding: 60px 20px;
+      }
+
+      .page-hero {
+        padding: 120px 20px 60px;
+      }
+
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+
+      .service-card {
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">Sondgeroth Fit</a>
+      <nav>
+        <a href="/services" class="active">Services</a>
+        <a href="https://h8dxbkdcekd.typeform.com/to/A2P9zN1U" target="_blank" rel="noopener noreferrer">Get Started</a>
+        <a href="https://apps.apple.com/us/app/sondgeroth-fit/id6738867288" target="_blank" rel="noopener noreferrer">App</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <h1>Services</h1>
+    <p>Coaching options to match your lifestyle and experience level.</p>
+  </div>
+
+  <!-- Services -->
+  <section class="services-section">
+    <div class="section-inner">
+      <div class="services-grid">
+
+        <div class="service-card">
+          <h3>In Person Training</h3>
+          <p>1 on 1 or group coaching in a 60-minute session. This is perfect for improving skills, refining technique, or just getting a solid workout. You tell me what you want to focus on and i'll take care of the rest.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>App Access</h3>
+          <p>Self-guided workouts, 6 per week via the Sondgeroth Fit app. Plus a Olympic Lifting, engine and daily workout program builder. As well as movement demos, and scaling options.</p>
+          <span class="price">$20/month</span>
+        </div>
+
+        <div class="service-card">
+          <h3>Accountability and Habits</h3>
+          <p>I help you stay accountable and/or improve your daily habits. Remember that small changes add up over time. Whether it's getting to the gym, improving sleep, increasing steps, building a routine, or something else, I'm here to support your success.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Coaching Calls</h3>
+          <p>Need deeper strategy, troubleshooting, or personalized planning? Let's dive in over Zoom, phone, or in-person. These are weekly or monthly to fit your schedule.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Custom Programming</h3>
+          <p>Get a fully customized training plan, tailored to your goals and equipment. Whether you're into CrossFit, Olympic lifting, powerlifting, engine, dumbbells, home gym, or general fitness, I've got you. Delivered weekly with text support and check-ins to keep you on track.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Programming Adjustments</h3>
+          <p>Already following another program? Let me optimize it. I'll tweak your workouts to match your goals, lifestyle, and recovery to maximize results. No need to start from scratch.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <h2>Ready to Get Started?</h2>
+      <p>Fill out the onboarding form for a free consultation and we'll find the right program for you.</p>
+      <div class="cta-buttons">
+        <a href="https://h8dxbkdcekd.typeform.com/to/A2P9zN1U" target="_blank" rel="noopener noreferrer" class="btn">Onboarding Form</a>
+        <a href="https://apps.apple.com/us/app/sondgeroth-fit/id6738867288" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">Download the App</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-inner">
+      <h2 class="section-heading">Contact Me</h2>
+      <div class="contact-content">
+        <p>Interested in working together or have questions? Reach out for a free consultation to help us find a program that works for you. Or fill out the onboarding form to get started!</p>
+        <a href="mailto:ben@sondgerothfit.com" class="contact-email">ben@sondgerothfit.com</a>
+        <div class="contact-buttons">
+          <a href="https://h8dxbkdcekd.typeform.com/to/A2P9zN1U" target="_blank" rel="noopener noreferrer" class="btn">Onboarding Form</a>
+          <a href="mailto:ben@sondgerothfit.com" class="btn btn-outline">Email Me</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/sondgeroth.fit/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.facebook.com/people/Sondgeroth-Fit/61568907205618/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.youtube.com/channel/UC-cmcqoUNuGsJsqTo_kbq2A" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.tiktok.com/@sondgeroth.fit" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sondgeroth Fit. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
