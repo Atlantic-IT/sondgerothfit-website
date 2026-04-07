@@ -1,5 +1,8 @@
-# Local project plans (OneDrive only)
+# Local project plans 
 plans/
 
 # Claude Code plan files
 .claude/
+
+# Local procedure/reference notes (OneDrive only)
+deco_procedure.md
