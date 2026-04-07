@@ -1,2 +1,5 @@
 # Local project plans (OneDrive only)
 plans/
+
+# Claude Code plan files
+.claude/
