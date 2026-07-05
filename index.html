@@ -10,11 +10,11 @@
   <meta property="og:description" content="Personalized fitness coaching by Ben Sondgeroth. CrossFit L2 Trainer & Adaptive Trainer. Virtual coaching, custom programming, and in-person training.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sondgerothfit.com">
-  <meta property="og:image" content="https://sondgerothfit.com/imag_social.png">
+  <meta property="og:image" content="https://sondgerothfit.com/media/image_social.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sondgeroth Fit | Personal Fitness Coaching">
   <meta name="twitter:description" content="Personalized fitness coaching by Ben Sondgeroth. CrossFit L2 Trainer & Adaptive Trainer. Sustainable fitness for real life.">
-  <meta name="twitter:image" content="https://sondgerothfit.com/imag_social.png">
+  <meta name="twitter:image" content="https://sondgerothfit.com/media/image_social.png">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <style>
@@ -99,7 +99,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: url('ruck.jpg') center / cover no-repeat;
+      background: url('media/ruck.jpg') center / cover no-repeat;
       text-align: center;
       color: #fff;
     }
@@ -192,11 +192,9 @@
       align-items: center;
     }
 
-    .about-img {
-      border-radius: 8px;
-      object-fit: cover;
-      object-position: top center;
-      width: 100%;
+    .about-text {
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .about-tagline {
@@ -265,6 +263,11 @@
       align-items: center;
     }
 
+    .programs-text {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
     .programs-text p {
       font-size: 1.05rem;
       color: #333;
@@ -297,13 +300,6 @@
       height: 8px;
       background: #e85d26;
       border-radius: 50%;
-    }
-
-    .programs-img {
-      border-radius: 8px;
-      object-fit: cover;
-      width: 100%;
-      max-height: 480px;
     }
 
     /* ── Contact ── */
@@ -424,18 +420,8 @@
 
     /* ── Responsive ── */
     @media (min-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-      }
-
       .testimonials-grid {
         grid-template-columns: 1fr 1fr;
-      }
-
-      .programs-layout {
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
       }
 
       .hero-content h1 {
@@ -500,7 +486,7 @@
     "url": "https://sondgerothfit.com",
     "email": "ben@sondgerothfit.com",
     "description": "Personalized fitness coaching by Ben Sondgeroth. Virtual coaching, custom programming, and in-person training for sustainable fitness.",
-    "image": "https://sondgerothfit.com/imag_social.png",
+    "image": "https://sondgerothfit.com/media/image_social.png",
     "founder": {
       "@type": "Person",
       "name": "Ben Sondgeroth",
@@ -616,7 +602,6 @@
   <section id="about">
     <div class="section-inner">
       <div class="about-grid">
-        <img src="ben-profile.jpg" alt="Coach Ben Sondgeroth — CrossFit L2 Trainer and fitness coach at Sondgeroth Fit" class="about-img">
         <div class="about-text">
           <div class="about-tagline">Father. Husband. Coach. Athlete.</div>
           <h2>Coach Ben Sondgeroth</h2>
@@ -686,7 +671,6 @@
           </ul>
           <a href="/services" class="btn">Explore Programs</a>
         </div>
-        <img src="training-bw.jpg" alt="Strength training session at Sondgeroth Fit — personalized coaching and custom programming" class="programs-img">
       </div>
     </div>
   </section>
